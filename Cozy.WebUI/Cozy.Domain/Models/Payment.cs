@@ -12,5 +12,6 @@ namespace Cozy.Domain.Models
 
         public string TenantId { get; set; }
         public int LeaseId { get; set; }
+        public Lease Lease { get; set; }
     }
 }

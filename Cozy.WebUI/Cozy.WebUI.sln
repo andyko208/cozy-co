@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28307.271
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cozy.WebUI", "Cozy.WebUI\Cozy.WebUI.csproj", "{0B391FDB-DBE9-4CAE-9113-849B9FEC3E79}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cozy.WebUI", "Cozy.WebUI\Cozy.WebUI.csproj", "{0B391FDB-DBE9-4CAE-9113-849B9FEC3E79}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cozy.Domain", "Cozy.Domain\Cozy.Domain.csproj", "{7D9B44CF-7B3E-40D1-97EC-C82B7E782BA2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Cozy.Domain", "Cozy.Domain\Cozy.Domain.csproj", "{7D9B44CF-7B3E-40D1-97EC-C82B7E782BA2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CozyData", "CozyData\CozyData.csproj", "{2F38B0AE-907E-45DC-B368-5893CD738F67}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{7D9B44CF-7B3E-40D1-97EC-C82B7E782BA2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7D9B44CF-7B3E-40D1-97EC-C82B7E782BA2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7D9B44CF-7B3E-40D1-97EC-C82B7E782BA2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F38B0AE-907E-45DC-B368-5893CD738F67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F38B0AE-907E-45DC-B368-5893CD738F67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F38B0AE-907E-45DC-B368-5893CD738F67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F38B0AE-907E-45DC-B368-5893CD738F67}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

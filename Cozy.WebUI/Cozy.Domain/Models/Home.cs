@@ -13,5 +13,6 @@ namespace Cozy.Domain.Models
         public string ImageURL { get; set; }
 
         public int HomeId { get; set; }
+        public Landlord Landlord { get; set; } // Navigation reference
     }
 }

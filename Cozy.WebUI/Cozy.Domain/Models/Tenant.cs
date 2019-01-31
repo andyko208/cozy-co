@@ -11,5 +11,8 @@ namespace Cozy.Domain.Models
         public string LastName { get; set; }
         public double Income { get; set; }
         public string PhoneNumber { get; set; }
+
+        // Navigation Inverse
+        public IEnumerable<Payment> Payments { get; set; }
     }
 }

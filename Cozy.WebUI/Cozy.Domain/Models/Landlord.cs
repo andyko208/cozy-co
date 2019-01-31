@@ -9,5 +9,8 @@ namespace Cozy.Domain.Models
         public string Id { get; set; }
         public string Firstname { get; set; }
         public string Lastname { get; set; }
+
+        // Navigation Collection
+        public IEnumerable<Home> Homes { get; set; }
     }
 }
