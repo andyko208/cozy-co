@@ -4,14 +4,16 @@ using CozyData.Context;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace CozyData.Migrations
 {
     [DbContext(typeof(CozyDbContext))]
-    partial class CozyDbContextModelSnapshot : ModelSnapshot
+    [Migration("20190205024251_added-model-seeding")]
+    partial class addedmodelseeding
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

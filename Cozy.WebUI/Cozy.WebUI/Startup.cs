@@ -19,8 +19,8 @@ namespace Cozy.WebUI
         {
             // bad way of adding connection string
             // TODO: fix it later
-            var connectionString = "Data Source = (localdb)\\ProjectsV13; Initial Catalog = cozy; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
-            services.AddDbContext<CozyDbContext>(options => options.UseSqlServer(connectionString));
+            // var connectionString = "Data Source = (localdb)\\ProjectsV13; Initial Catalog = cozy; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
+            // services.AddDbContext<CozyDbContext>(options => options.UseSqlServer(connectionString));
             services.AddMvc();
         }
 
