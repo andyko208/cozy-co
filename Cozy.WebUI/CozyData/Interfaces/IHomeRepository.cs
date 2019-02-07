@@ -5,11 +5,11 @@ using System.Text;
 
 namespace CozyData.Interfaces
 {
-    public interface IHomeDataService
+    public interface IHomeRepository
     {
         // Read
         Home GetById(int homeId);
-        ICollection<Home> GetByLandlordid(int landlordId);
+        ICollection<Home> GetByLandlordId(string landlordId);
 
         // Create 
         Home Create(Home newHome);

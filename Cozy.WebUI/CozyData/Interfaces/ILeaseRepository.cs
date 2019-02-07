@@ -5,7 +5,7 @@ using System.Text;
 
 namespace CozyData.Interfaces
 {
-    public interface ILeaseDataService
+    public interface ILeaseRepository
     {
         // Read
         Lease GetById(int leaseId);
