@@ -10,6 +10,7 @@ namespace Cozy.Domain.Models
         public string Firstname { get; set; }
         public string Lastname { get; set; }
 
+        public int LanlordId { get; set; }
         // Navigation Collection
         public IEnumerable<Home> Homes { get; set; }
     }
