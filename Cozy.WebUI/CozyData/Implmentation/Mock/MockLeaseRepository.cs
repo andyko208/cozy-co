@@ -2,6 +2,7 @@
 using CozyData.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CozyData.Implmentation.Mock
@@ -17,7 +18,7 @@ namespace CozyData.Implmentation.Mock
 
         public Lease GetById(int leaseId)
         {
-            return Leases.Single(l => l.LeaseId == leaseId);
+            return Leases.Single(l => l.Id == leaseId);
         }
 
         public ICollection<Lease> GetByTenantId(string tenantId)

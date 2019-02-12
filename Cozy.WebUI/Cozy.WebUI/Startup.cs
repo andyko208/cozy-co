@@ -2,7 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Cozy.Service.Services;
 using CozyData.Context;
+using CozyData.Implmentation.EFCore;
+using CozyData.Implmentation.Mock;
+using CozyData.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -21,6 +25,15 @@ namespace Cozy.WebUI
             // TODO: fix it later
             // var connectionString = "Data Source = (localdb)\\ProjectsV13; Initial Catalog = cozy; Integrated Security = True; Connect Timeout = 30; Encrypt = False; TrustServerCertificate = False; ApplicationIntent = ReadWrite; MultiSubnetFailover = False";
             // services.AddDbContext<CozyDbContext>(options => options.UseSqlServer(connectionString));
+
+            // Repository Layer
+            services.AddScoped<IHomeRepository, EFCoreHomeRepository>();
+            // services.AddScoped<IHomeRepository, EFCoreHomeRepository>();
+            // whenever you find a Dependency on IHomeRepository
+            // replace that with MockHomeRepository
+
+            // Service Layer
+            services.AddScoped<IHomeService, HomeService>();
             services.AddMvc();
         }
 

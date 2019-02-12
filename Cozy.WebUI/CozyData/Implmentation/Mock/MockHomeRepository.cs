@@ -9,7 +9,10 @@ namespace CozyData.Implmentation.Mock
 {
     public class MockHomeRepository : IHomeRepository
     {
-        private List<Home> Homes = new List<Home>();
+        private List<Home> Homes = new List<Home>()
+        {
+            new Home{Id = 1, Address = "123 Main Street Mocked", City = "Austin"}
+        };
 
         public Home Create(Home newHome)
         {

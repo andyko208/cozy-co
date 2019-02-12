@@ -4,7 +4,7 @@ using System.Text;
 
 namespace CozyData.Implmentation.Mock
 {
-    class MockTenantRepository
+    public class MockTenantRepository
     {
     }
 }

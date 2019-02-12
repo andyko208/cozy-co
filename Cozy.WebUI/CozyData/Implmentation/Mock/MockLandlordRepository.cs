@@ -2,6 +2,7 @@
 using CozyData.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CozyData.Implmentation.Mock
@@ -14,7 +15,7 @@ namespace CozyData.Implmentation.Mock
         {
             Guid g = new Guid();
             newLandlord.Id = g.ToString();
-            //newLandlord.Id = Landlord.OrderByDescending(l => l.Id).Single().Id + 1;
+            // newLandlord.Id = Landlord.OrderByDescending(l => l.Id).Single().Id + 1;
             Landlords.Add(newLandlord);
 
             return newLandlord;
@@ -30,7 +31,7 @@ namespace CozyData.Implmentation.Mock
 
         public Landlord GetById(int landlordId)
         {
-            return Landlords.Single(l => l.Id == landlordId);
+            return Landlords.Single(l => l.LanlordId == landlordId);
         }
 
         public Landlord Update(Landlord updatedLandlord)

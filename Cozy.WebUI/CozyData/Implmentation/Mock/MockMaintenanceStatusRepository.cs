@@ -2,6 +2,7 @@
 using CozyData.Interfaces;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CozyData.Implmentation.Mock
@@ -17,7 +18,8 @@ namespace CozyData.Implmentation.Mock
 
         public MaintenanceStatus GetById(int maintenancestatusId)
         {
-            return Maintenances.Single(m => m.MaintenanceStatusId == maintenancestatusId);
+            throw new NotImplementedException();
+            //return Maintenances.Single(m => m.Id == maintenancestatusId);
         }
     }
 }
