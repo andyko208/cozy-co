@@ -9,6 +9,6 @@ namespace CozyData.Interfaces
     {
         Payment GetById(int paymentId);
         ICollection<Payment> GetByTenantdId(string tenantId);
-        ICollection<Payment> GetByLeaseId(string leaseId);
+        ICollection<Payment> GetByLeaseId(int leaseId);
     }
 }

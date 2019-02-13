@@ -36,7 +36,10 @@ namespace CozyData.Implmentation.Mock
 
         public Landlord Update(Landlord updatedLandlord)
         {
-            throw new NotImplementedException();
+            deleteById(updatedLandlord.LanlordId); 
+            Landlords.Add(updatedLandlord);
+
+            return updatedLandlord;
         }
     }
 }

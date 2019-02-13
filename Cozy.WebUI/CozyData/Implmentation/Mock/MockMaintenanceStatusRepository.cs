@@ -9,17 +9,16 @@ namespace CozyData.Implmentation.Mock
 {
     public class MockMaintenanceStatusRepository : IMaintenanceStatusRepository
     {
-        private List<Maintenance> Maintenances = new List<Maintenance>();
+        private List<MaintenanceStatus> Maintenancestatuses = new List<MaintenanceStatus>();
 
         public ICollection<MaintenanceStatus> GetAll()
         {
-            throw new NotImplementedException();
+            return Maintenancestatuses;
         }
 
         public MaintenanceStatus GetById(int maintenancestatusId)
         {
-            throw new NotImplementedException();
-            //return Maintenances.Single(m => m.Id == maintenancestatusId);
+            return Maintenancestatuses.Single(m => m.Id == maintenancestatusId);
         }
     }
 }

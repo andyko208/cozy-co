@@ -3,24 +3,26 @@ using CozyData.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.Text;
+using System.Linq;
 
 namespace CozyData.Implmentation.Mock
 {
     public class MockPaymentRespository : IPaymentRepository
     {
+        private List<Payment> Payments = new List<Payment>();
         public Payment GetById(int paymentId)
         {
-            throw new NotImplementedException();
+            return Payments.Single(p => p.Id == paymentId);
         }
 
-        public ICollection<Payment> GetByLeaseId(string leaseId)
+        public ICollection<Payment> GetByLeaseId(int leaseId)
         {
-            throw new NotImplementedException();
+            return Payments.FindAll(p => p.LeaseId == leaseId);
         }
 
         public ICollection<Payment> GetByTenantdId(string tenantId)
         {
-            throw new NotImplementedException();
+            return Payments.FindAll(p => p.TenantId == tenantId);
         }
     }
 }
