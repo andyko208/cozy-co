@@ -27,15 +27,15 @@ namespace Cozy.WebUI
             // services.AddDbContext<CozyDbContext>(options => options.UseSqlServer(connectionString));
 
             // Repository Layer
-            services.AddScoped<IHomeRepository, EFCoreHomeRepository>();
-            // services.AddScoped<IHomeRepository, EFCoreHomeRepository>();
-            // whenever you find a Dependency on IHomeRepository
-            // replace that with MockHomeRepository
+            GetDependencyResolvedForMockRepositoryLayer(services);
+
 
             // Service Layer
-            services.AddScoped<IHomeService, HomeService>();
+            GetDependencyResolvedForServiceLayer(services);
+
             services.AddMvc();
         }
+
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
@@ -49,6 +49,25 @@ namespace Cozy.WebUI
             app.UseMvcWithDefaultRoute();
             // controller/view/?id
             // Home/index/?id
+        }
+        
+
+        private void GetDependencyResolvedForMockRepositoryLayer(IServiceCollection services)
+        {
+            services.AddScoped<IHomeRepository, MockHomeRepository>();
+            services.AddScoped<ILeaseRepository, MockLeaseRepository>();
+        }
+
+        private void GetDependencyResolvedForEFCoreLayer(IServiceCollection services)
+        {
+            services.AddScoped<IHomeRepository, EFCoreHomeRepository>();
+            services.AddScoped<ILeaseRepository, EFCoreLeaseRepository>();
+        }
+
+        private void GetDependencyResolvedForServiceLayer(IServiceCollection services)
+        {
+            services.AddScoped<IHomeService, HomeService>();
+            services.AddScoped<ILeaseService, LeaseService>();
         }
     }
 }

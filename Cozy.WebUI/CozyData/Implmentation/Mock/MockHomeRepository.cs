@@ -11,7 +11,10 @@ namespace CozyData.Implmentation.Mock
     {
         private List<Home> Homes = new List<Home>()
         {
-            new Home{Id = 1, Address = "123 Main Street Mocked", City = "Austin"}
+            new Home{Id = 1,
+                Address = "123 Main Street Mocked",
+                City = "Austin", State = "TX",
+                ImageURL = "https://henley.com.au/cms_uploads/images_small/88_aegean-46-pacific-facade_1474x1120px.jpg"}
         };
 
         public Home Create(Home newHome)
