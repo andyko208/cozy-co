@@ -8,7 +8,10 @@ namespace Cozy.Service.Services
 {
     public interface ILeaseService
     {
+        Lease GetById(int leaseId);
+        ICollection<Lease> GetByTenantId(string tenantId);
         ICollection<Lease> GetByHomeId(int homeId);
+
     }
     public class LeaseService : ILeaseService
     {
@@ -21,6 +24,16 @@ namespace Cozy.Service.Services
         public ICollection<Lease> GetByHomeId(int homeId)
         {
             return _leaseRepository.GetByHomeId(homeId);
+        }
+
+        public Lease GetById(int leaseId)
+        {
+            return _leaseRepository.GetById(leaseId);
+        }
+
+        public ICollection<Lease> GetByTenantId(string tenantId)
+        {
+            return _leaseRepository.GetByTenantId(tenantId);
         }
     }
 }
