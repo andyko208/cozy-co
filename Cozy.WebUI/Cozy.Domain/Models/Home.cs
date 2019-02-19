@@ -12,8 +12,7 @@ namespace Cozy.Domain.Models
         public string State { get; set; }
         public string ImageURL { get; set; }
 
-        public int HomeId { get; set; }
         public string LandlordId { get; set; }
-        public Landlord Landlord { get; set; } // Navigation reference
+        public AppUser Landlord { get; set; }
     }
 }
