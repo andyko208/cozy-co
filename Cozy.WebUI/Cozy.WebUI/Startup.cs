@@ -11,6 +11,7 @@ using CozyData.Interfaces;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 
@@ -35,8 +36,10 @@ namespace Cozy.WebUI
             // Service Layer
             GetDependencyResolvedForServiceLayer(services);
 
+
+            // Identity
             services.AddDbContext<CozyDbContext>();
-            services.AddDefaultIdentity<AppUser>()
+            services.AddIdentity<AppUser, IdentityRole>()
                 .AddEntityFrameworkStores<CozyDbContext>();
 
             services.AddMvc();
@@ -64,12 +67,14 @@ namespace Cozy.WebUI
         {
             services.AddScoped<IHomeRepository, MockHomeRepository>();
             services.AddScoped<ILeaseRepository, MockLeaseRepository>();
+            services.AddScoped<IMaintenanceRepository, MockMaintenanceRepository>();
+            services.AddScoped<IMaintenanceStatusRepository, MockMaintenanceStatusRepository>();
+
         }
 
         private void GetDependencyResolvedForEFCoreRepositoryLayer(IServiceCollection services)
         {
             services.AddScoped<IHomeRepository, EFCoreHomeRepository>();
-            services.AddScoped<ILeaseRepository, EFCoreLeaseRepository>();
             services.AddScoped<ILeaseRepository, EFCoreLeaseRepository>();
             services.AddScoped<IMaintenanceRepository, EFCoreMaintenanceRepository>();
             services.AddScoped<IPaymentRepository, EFCorePaymentRepository>();
@@ -80,6 +85,9 @@ namespace Cozy.WebUI
         {
             services.AddScoped<IHomeService, HomeService>();
             services.AddScoped<ILeaseService, LeaseService>();
+            services.AddScoped<IMaintenanceService, MaintenanceService>();
+            services.AddScoped<IPaymentService, PaymentService>();
+            services.AddScoped<IMaintenanceStatusService, MaintenanceStatusService>();
         }
     }
 }
