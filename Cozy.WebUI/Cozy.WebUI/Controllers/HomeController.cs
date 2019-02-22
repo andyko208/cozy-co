@@ -23,7 +23,7 @@ namespace Cozy.WebUI.Controllers
         }
         public IActionResult Index()
         {
-            var home = _homeService.GetById(1);
+            var home = _homeService.GetById(3);
             return View(home);
         }
     }
