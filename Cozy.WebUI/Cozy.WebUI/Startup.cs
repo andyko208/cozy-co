@@ -42,6 +42,8 @@ namespace Cozy.WebUI
             services.AddIdentity<AppUser, IdentityRole>()
                 .AddEntityFrameworkStores<CozyDbContext>();
 
+            // Homework is to find out how to set different options for password
+
             services.AddMvc();
         }
 
