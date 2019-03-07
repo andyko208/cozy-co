@@ -15,4 +15,8 @@
     <ProjectReference Include="..\CozyData\CozyData.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\images\homes\" />
+  </ItemGroup>
+
 </Project>
