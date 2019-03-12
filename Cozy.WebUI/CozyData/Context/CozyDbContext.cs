@@ -20,7 +20,7 @@ namespace CozyData.Context
         // Setting up the provider (SQL server) and location of the Database
         protected override void OnConfiguring(DbContextOptionsBuilder optionBuilder)
         {
-            optionBuilder.UseSqlServer(@"Server=(localdb)\projectsv13;Database=cozy;Trusted_Connection=True");
+            optionBuilder.UseSqlServer(Environment.GetEnvironmentVariable("SQLCONNSTR_COZY_DB"));
         }
         // Seeding - populate db with initial data
         protected override void OnModelCreating(ModelBuilder modelBuilder)

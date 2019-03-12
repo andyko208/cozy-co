@@ -1,14 +1,7 @@
-﻿@model Home
-@{
-    ViewData["Title"] = "Index";
-}
-<h2>Index</h2>
-<div>
-    @if(User.Identity.IsAuthenticated)
-    {
-        <p>Welcome to the site! -@User.Identity.Name</p>
-    }
-</div>
-<div>
-    @Model.Id - @Model.Address, @Model.City
+﻿<div class="jumbotron">
+    <h1 class="display-4">Hello, Welcome to Cozy-Co!</h1>
+    <p class="lead">This is a project base Web App</p>
+    <hr class="my-4">
+    <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
 </div>
